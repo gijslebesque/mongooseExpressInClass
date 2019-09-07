@@ -1,0 +1,15 @@
+<h1>Create a user</h1>
+
+<form action="/createUser" method="POST">
+    <input type="text" name="name" placeholder="Your name">
+    <input type="number" name="age" placeholder="Your age">
+    <input type="text" name="mood" placeholder="Your mood">
+    <button type="submit">Send to server</button>
+</form>
+
+
+<form action="/users/updateUser" method="POST">
+    <input type="text" name="name">
+    <input type="text" placeholder="Mood" name="mood">
+    <button type="submit">Update</button>
+</form>

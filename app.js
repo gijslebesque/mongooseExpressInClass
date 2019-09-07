@@ -4,12 +4,15 @@ const path = require("path");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 
+const bodyParser = require("body-parser");
+
 const indexRouter = require("./routes/index");
-const usersRouter = require("./routes/users");
 
 const mongoose = require("mongoose");
 
 const app = express();
+
+app.use(bodyParser.urlencoded({ extended: true }));
 
 //here connect with database
 
@@ -34,11 +37,18 @@ app.use(cookieParser());
 //serving static files;
 app.use(express.static(path.join(__dirname, "public")));
 
-app.use("/theRoute", locationOfRouteController);
-
+//Declaring routes
 app.use("/", indexRouter);
 
+const usersRouter = require("./routes/users");
 app.use("/users", usersRouter);
+
+const createUserRouter = require("./routes/createUser.js");
+
+//first argument is name of route
+app.use("/createUser", createUserRouter);
+
+//users/data
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

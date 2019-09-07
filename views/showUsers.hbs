@@ -1,0 +1,10 @@
+{{#each allUsers}}
+<form action="/users/deleteUser/{{this._id}}" method="POST">
+    <ul>
+        <li>{{this.name}}</li>
+        <li>{{this.age}}</li>
+        <li>{{this.mood}}</li>
+    </ul>
+    <button type="submit">Delete</button>
+</form>
+{{/each}}

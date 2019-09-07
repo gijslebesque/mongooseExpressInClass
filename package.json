@@ -3,9 +3,11 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "nodemon ./bin/www",
+    "debug": "nodemon --inspect ./bin/www"
   },
   "dependencies": {
+    "body-parser": "^1.19.0",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
     "express": "~4.16.0",
@@ -13,5 +15,21 @@
     "http-errors": "~1.6.2",
     "mongoose": "^5.6.13",
     "morgan": "~1.9.0"
-  }
+  },
+  "main": "app.js",
+  "bin": {
+    "expressmongo": "data.js"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gijslebesque/mongooseExpressInClass.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gijslebesque/mongooseExpressInClass/issues"
+  },
+  "homepage": "https://github.com/gijslebesque/mongooseExpressInClass#readme",
+  "description": ""
 }
